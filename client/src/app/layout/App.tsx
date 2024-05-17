@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import { Products } from "../models/product";
+import { Product } from "../models/product";
 import Catalog from "../../features/catalog/Catalog";
+import Typography from "@mui/material/Typography";
 
 function App() {
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/api/products')
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <div >
-      <h1>Re-Store</h1>
+      <Typography>Re-Store</Typography>
       <Catalog products={products} addProduct={addProduct}/>
     </div>
   )
